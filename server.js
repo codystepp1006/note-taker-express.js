@@ -1,5 +1,6 @@
-const express = require('express');
 const path = require('path');
+const express = require('express');
+const routes = require('./Develop/routes');
 
 const PORT =3000;
 
@@ -10,7 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('./Develop/public'))
 
-// app.use('api', api);
+
+app.use(routes);
 
 app.get('/', (req, res)=>
     res.sendFile(path.join(__dirname, 'Develop/public/index.html'))
@@ -22,7 +24,6 @@ app.get('/notes', (req, res) =>
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT}`)
 );
-
 
 
 

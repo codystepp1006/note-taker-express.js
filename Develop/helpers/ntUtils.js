@@ -14,7 +14,7 @@ dbdata = _content;
 
 
 function readAndAppend(noteTitle, noteText){
-console.log("Holy Fook we made a post")
+console.log("Made a POST request")
 
 
     fs.readFile('./Develop/db/db.json', 'utf8', function fileParseDate(err, data){
